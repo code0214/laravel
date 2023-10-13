@@ -1,0 +1,335 @@
+/**
+ * ibxSlider v4.1.2 - Fully loaded, responsive content slider
+ * http://ibxslider.com
+ *
+ * Written by: Steven Wanderski, 2014
+ * http://stevenwanderski.com
+ * (while drinking Belgian ales and listening to jazz)
+ *
+ * CEO and founder of ibxCreative, LTD
+ * http://ibxcreative.com
+ */
+
+
+/** RESET AND LAYOUT
+===================================*/
+
+.ibx-wrapper {
+	position: relative;
+	margin: 0 auto;
+	padding: 0;
+	*zoom: 1;
+}
+
+.ibx-wrapper img {
+	max-width: 100%;
+	display: block;
+}
+
+/** THEME
+===================================*/
+
+.ibx-wrapper .ibx-viewport {
+margin-left:5px;
+
+}
+
+.ibx-wrapper .ibx-pager,
+.ibx-wrapper .ibx-controls-auto {
+	position: absolute;
+	bottom: -30px;
+	width: 100%;
+}
+
+/* LOADER */
+
+.ibx-wrapper .ibx-loading {
+	min-height: 50px;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2000;
+}
+
+/* PAGER */
+
+.ibx-wrapper .ibx-pager {
+	text-align: center;
+	font-size: .85em;
+	font-family: Arial;
+	font-weight: bold;
+	color: #666;
+	padding-top: 20px;
+		padding-bottom: 20px;
+}
+
+.ibx-wrapper .ibx-pager .ibx-pager-item,
+.ibx-wrapper .ibx-controls-auto .ibx-controls-auto-item {
+	display: inline-block;
+	*zoom: 1;
+	*display: inline;
+}
+
+.ibx-wrapper .ibx-pager.ibx-default-pager a {
+	background: #666;
+	text-indent: -9999px;
+	display: block;
+	width: 10px;
+	height: 10px;
+	margin: 0 5px;
+	outline: 0;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.ibx-wrapper .ibx-pager.ibx-default-pager a:hover,
+.ibx-wrapper .ibx-pager.ibx-default-pager a.active {
+	background: #000;
+}
+
+/* DIRECTION CONTROLS (NEXT / PREV) */
+
+.ibx-horizontal .ibx-wrapper .ibx-prev {
+	left: -20px;
+}
+
+.ibx-horizontal .ibx-wrapper .ibx-next {
+	right: -30px;	
+}
+.ibx-vertical .ibx-wrapper .ibx-prev {
+	top: -35px;
+}
+
+
+.ibx-vertical .ibx-wrapper .ibx-next {
+	bottom: -30px;	
+}
+
+.ibx-wrapper .ibx-prev:hover {
+	background-position: 0 0;
+}
+
+.ibx-wrapper .ibx-next:hover {
+	background-position: -43px 0;
+}
+
+.ibx-horizontal .ibx-wrapper .ibx-controls-direction a {
+	margin-top: -16px;
+    outline: 0 none;
+    position: absolute;
+    top: 50%;
+    z-index: 9999;
+	
+}
+.ibx-vertical .ibx-wrapper .ibx-controls-direction a {
+	margin-left: -8px;
+    outline: 0 none;
+    position: absolute;
+    left: 50%;
+    z-index: 9999;
+}
+
+.ibx-wrapper .ibx-controls-direction a.disabled {
+	display: none;
+}
+.ibx-wrapper .ibx-controls-direction a i{
+font-weight:bold;
+}
+/* AUTO CONTROLS (START / STOP) */
+
+.ibx-wrapper .ibx-controls-auto {
+	text-align: center;
+}
+
+.ibx-wrapper .ibx-controls-auto .ibx-start {
+	display: block;
+	text-indent: -9999px;
+	width: 10px;
+	height: 11px;
+	outline: 0;
+	background: url(images/controls.png) -86px -11px no-repeat;
+	margin: 0 3px;
+}
+
+.ibx-wrapper .ibx-controls-auto .ibx-start:hover,
+.ibx-wrapper .ibx-controls-auto .ibx-start.active {
+	background-position: -86px 0;
+}
+
+.ibx-wrapper .ibx-controls-auto .ibx-stop {
+	display: block;
+	text-indent: -9999px;
+	width: 9px;
+	height: 11px;
+	outline: 0;
+	background: url(images/controls.png) -86px -44px no-repeat;
+	margin: 0 3px;
+}
+
+.ibx-wrapper .ibx-controls-auto .ibx-stop:hover,
+.ibx-wrapper .ibx-controls-auto .ibx-stop.active {
+	background-position: -86px -33px;
+}
+
+/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
+
+.ibx-wrapper .ibx-controls.ibx-has-controls-auto.ibx-has-pager .ibx-pager {
+	text-align: left;
+	width: 80%;
+}
+
+.ibx-wrapper .ibx-controls.ibx-has-controls-auto.ibx-has-pager .ibx-controls-auto {
+	right: 0;
+	width: 35px;
+}
+
+/* IMAGE CAPTIONS */
+
+.ibx-wrapper .ibx-caption {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: #666\9;
+	background: rgba(80, 80, 80, 0.75);
+	width: 100%;
+}
+
+.ibx-wrapper .ibx-caption span {
+	color: #fff;
+	font-family: Arial;
+	display: block;
+	font-size: .85em;
+	padding: 10px;
+}
+
+@media (max-width: 767px) {
+.ibx-horizontal .ibx-wrapper .ibx-prev ,.ibx-horizontal  .ibx-wrapper .ibx-next{
+display:none;
+} 
+
+}
+.ibx-vertical{
+margin-top:30px;
+}
+
+.greyscale {
+   -webkit-filter: grayscale(100%);
+filter: grayscale(100%);
+filter: gray;
+filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale");
+  opacity: 0.8;
+    -o-transition: .5s;
+  -ms-transition: .5s;
+  -moz-transition: .5s;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.greyscale:hover {
+  filter: none;
+  -webkit-filter: grayscale(0);
+  opacity: 1;
+    -o-transition: .5s;
+  -ms-transition: .5s;
+  -moz-transition: .5s;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.ibx-vertical .ibx-wrapper .ibx-pager, .ibx-wrapper .ibx-controls-auto{
+   bottom: -50px;
+}
+
+.slide-contents-horizontal img,.slide-contents-horizontal a img, .slide-contents-none img, .slide-contents-vertical img{
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.slide-contents-none{
+position:relative;
+}
+.ibx-controls.ibx-has-pager {
+    height: 25px;
+    line-height: 25px;
+}
+
+.client-logo-slider.ibx-horizontal {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/*Overlay*/
+.ibx-text{
+	font-weight: bold;
+}
+.ibx-bottom ,.ibx-top{
+    opacity: 0;
+    padding: 5px 0;
+    position: absolute;
+    transition: background 0.2s linear 0s, border 0.2s linear 0s, opacity 0.2s linear 0s;
+    width: 100%;
+    text-align: center;
+}
+.ibx-bottom{
+	bottom: 0;
+}
+.ibx-top {
+    top: 0;
+}
+
+.ibx-overlay {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    transition: all 0.45s ease 0s;
+    width: 100%;
+    z-index: 1;
+}
+.ibx-overlay .ibx-overlay_container {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+.ibx-overlay .ibx-overlay_content {
+    display: table-cell;
+    line-height: 0;
+    vertical-align: middle;
+}
+.sliderContent .ibx-zoom:hover img {
+    transform: scale(1.5);
+    transition: all 0.45s ease 0s;
+}
+.sliderContent img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}
+.sliderContent {
+    display: block;
+    list-style: outside none none;
+    overflow: hidden;
+    position: relative;
+}
+
+.sliderContent:hover .ibx-bottom, .sliderContent:hover .ibx-top {
+		opacity: 1;
+		}
+.ibx-label-bottom {
+    margin-top: 2px;
+}
+
+.ibx-label-top {
+    margin-bottom: 2px;
+}
