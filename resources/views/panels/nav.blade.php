@@ -426,7 +426,7 @@
           <li itemprop="name" class="dropdown mega" data-id="107" data-level="1">
             <a itemprop="url" class=" dropdown-toggle" href="https://pertanian.ns.gov.my/en/#" data-target="#" data-toggle="dropdown">media <em class="caret"></em>
             </a>
-            <div class="nav-child dropdown-menu mega-dropdown-menu" style="">
+            <div class="nav-child dropdown-menu mega-dropdown-menu">
               <div class="mega-dropdown-inner">
                 <div class="row">
                   <div class="col-xs-12 mega-col-nav" data-width="12">
@@ -440,7 +440,7 @@
                         </li>
                         <li itemprop="name" class="dropdown-submenu mega" data-id="185" data-level="2">
                           <a itemprop="url" class="" href="https://pertanian.ns.gov.my/en/multimedia/penerbitan" data-target="#">Penerbitan </a>
-                          <div class="nav-child dropdown-menu mega-dropdown-menu" style="">
+                          <div class="nav-child dropdown-menu mega-dropdown-menu">
                             <div class="mega-dropdown-inner">
                               <div class="row">
                                 <div class="col-xs-12 mega-col-nav" data-width="12">
@@ -458,7 +458,7 @@
                         </li>
                         <li itemprop="name" class="dropdown-submenu mega" data-id="186" data-level="2">
                           <a itemprop="url" class="" href="https://pertanian.ns.gov.my/" data-target="#">Galeri</a>
-                          <div class="nav-child dropdown-menu mega-dropdown-menu" style="">
+                          <div class="nav-child dropdown-menu mega-dropdown-menu">
                             <div class="mega-dropdown-inner">
                               <div class="row">
                                 <div class="col-xs-12 mega-col-nav" data-width="12">
